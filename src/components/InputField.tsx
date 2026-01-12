@@ -1,13 +1,4 @@
-import type { ChangeEvent } from "react";
-
-type InputFieldProps = {
-    label: string;
-    type?: string;
-    name: string;
-    value: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    placeholder: string;
-};
+import type { InputFieldProps } from "@/types/todo.types";
 
 export const InputField = ({ label, type = "text", name, value, onChange, placeholder }: InputFieldProps) => (
     <label className="flex flex-col gap-1 text-gray-800 dark:text-gray-200">
