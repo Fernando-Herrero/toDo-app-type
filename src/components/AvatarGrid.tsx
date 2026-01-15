@@ -1,4 +1,5 @@
 import { AuthContext } from "@/context/AuthContext";
+import { useTranslate } from "@/translations/useTranslate";
 import { useContext } from "react";
 import bart from "/bart.webp";
 import homer from "/homer.webp";
@@ -20,10 +21,11 @@ export const AvatarGrid = () => {
     const auth = useContext(AuthContext);
     if (!auth) return null;
     const { user, updateUser } = auth;
+    const { t } = useTranslate();
 
     return (
         <section className="flex flex-col gap-1 text-center">
-            <p className="text-login">Elige tu imagen de avatar</p>
+            <p className="text-login">{t("avatar_image.title")}</p>
 
             <div className="grid grid-cols-3 justify-items-center gap-1">
                 {avatars.map(({ name, src }) => (
@@ -31,13 +33,13 @@ export const AvatarGrid = () => {
                         key={name}
                         type="button"
                         aria-label={`Elegir avatar de ${name}`}
-                        aria-pressed={user.avatar === name}
-                        onClick={() => updateUser({ avatar: name })}
+                        aria-pressed={user.avatarUrl === name}
+                        onClick={() => updateUser({ avatarUrl: name })}
                         className={`p-1 rounded-full transition-all duration-150 active:scale-95 focus:outline-none ${
-                            user.avatar === name ? "rotating-border" : ""
+                            user.avatarUrl === name ? "rotating-border" : ""
                         }`}
                     >
-                        {user.avatar === name && (
+                        {user.avatarUrl === name && (
                             <svg viewBox="0 0 100 100">
                                 <defs>
                                     <linearGradient id="gradient-base" x1="0%" y1="0%" x2="100%" y2="0%">

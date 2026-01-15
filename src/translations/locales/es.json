@@ -1,0 +1,46 @@
+{
+    "page_error": {
+        "default_title": "Ocurrió un error",
+        "retry_text": "Reintentar",
+        "back_to_home": "Volver al inicio"
+    },
+    "error_boundary": {
+        "occurred": "Ha ocurrido un error en esta sección."
+    },
+    "login": {
+        "main_title": "COSAS QUE HARE...",
+        "subtitle": "...O QUIZAS NO"
+    },
+    "form": {
+        "labels": {
+            "name": "Nombre:",
+            "email": "Email:",
+            "role": "Rol:"
+        },
+        "placeholders": {
+            "name": "Escribe tu nombre",
+            "email": "Escribe tu email"
+        },
+        "select_options": {
+            "placeholder": "-- Seleccione su Rol --",
+            "father": "Papá",
+            "mother": "Mamá",
+            "son": "Hijo",
+            "daughter": "Hija",
+            "pet": "Mascota"
+        },
+        "errors": {
+            "name_required": "El nombre es obligatorio",
+            "name_min": "El nombre debe tener al menos 2 caracteres",
+            "email_required": "El email es obligatorio",
+            "email_invalid": "Por favor ingresa un email válido"
+        },
+        "button": {
+            "submit": "Entrar",
+            "loading": "Cargando"
+        }
+    },
+    "avatar_image": {
+        "title": "Elige tu imagen de avatar"
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "page_error": {
+        "default_title": "Something went wrong",
+        "retry_text": "Retry",
+        "back_to_home": "Back to home"
+    },
+    "error_boundary": {
+        "occurred": "An error has occurred in this section."
+    },
+    "login": {
+        "main_title": "THINGS I WILL DO...",
+        "subtitle": "...OR MAYBE NOT"
+    },
+    "form": {
+        "labels": {
+            "name": "Name:",
+            "email": "Email:",
+            "role": "Role:"
+        },
+        "placeholders": {
+            "name": "Enter your name",
+            "email": "Enter your email"
+        },
+        "select_options": {
+            "placeholder": "-- Select your Role --",
+            "father": "Father",
+            "mother": "Mother",
+            "son": "Son",
+            "daughter": "Daughter",
+            "pet": "Pet"
+        },
+        "errors": {
+            "name_required": "Name is required",
+            "name_min": "Name must be at least 2 characters",
+            "email_required": "Email is required",
+            "email_invalid": "Please enter a valid email"
+        },
+        "button": {
+            "submit": "Submit",
+            "loading": "Loading"
+        }
+    },
+    "avatar_image": {
+        "title": "Choose your avatar image"
+    }
+}

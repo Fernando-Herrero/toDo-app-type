@@ -1,10 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import tailwind from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js']
-  }
-})
+    plugins: [react(), tailwind()],
+    resolve: {
+        alias: {
+            "@": fileURLToPath(new URL("./src", import.meta.url)),
+        },
+    },
+});

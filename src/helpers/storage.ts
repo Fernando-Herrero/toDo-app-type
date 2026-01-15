@@ -1,15 +1,5 @@
-/**
- * Crea un conjunto de funciones para manejar storage (localStorage o sessionStorage).
- * @param {Storage} storageType - El tipo de storage (localStorage o sessionStorage)
- * @returns {Object} Objeto con métodos para manejar el storage
- */
-const storageHandler = (storageType) => {
-    /**
-     * Recupera un valor del storage.
-     * @param {string} key Clave con la que se buscará en el storage.
-     * @returns {*} El valor parseado si existe, o null si no existe o hay error.
-     */
-    const get = (key) => {
+const storageHandler = (storageType: Storage) => {
+    const get = <T>(key: string): T | null => {
         if (!key || typeof key !== "string") return null;
 
         try {
@@ -25,12 +15,8 @@ const storageHandler = (storageType) => {
             return null;
         }
     };
-    /**
-     * Guarda un valor en el storage.
-     * @param {string} key Clave con la que se guardará en el storage.
-     * @param {*} data Puede ser cualquier tipo serializable (objeto, array, etc.).
-     */
-    const save = (key, data) => {
+
+    const save = (key: string, data: unknown): void => {
         if (!key || typeof key !== "string") return;
 
         try {
@@ -44,11 +30,8 @@ const storageHandler = (storageType) => {
             );
         }
     };
-    /**
-     * Elimina un valor del storage.
-     * @param {string} key Clave que se desea eliminar del storage.
-     */
-    const remove = (key) => {
+
+    const remove = (key: string): void => {
         if (!key || typeof key !== "string") return;
 
         try {
@@ -62,10 +45,8 @@ const storageHandler = (storageType) => {
             );
         }
     };
-    /**
-     * Limpia por completo el storage.
-     */
-    const clear = () => {
+
+    const clear = (): void => {
         try {
             storageType.clear();
         } catch (error) {
@@ -77,21 +58,13 @@ const storageHandler = (storageType) => {
             );
         }
     };
-    /**
-     * Verifica si una clave existe en el storage.
-     * @param {string} key Clave a verificar.
-     * @returns {boolean} True si existe, false si no.
-     */
-    const exists = (key) => {
+
+    const exists = (key: string): boolean => {
         if (!key || typeof key !== "string") return false;
         return storageType.getItem(key) !== null;
     };
-    /**
 
-	 * Obtiene todas las claves del storage.
-	 * @returns {string[]} Array con todas las claves.
-	 */
-    const getAllKeys = () => {
+    const getAllKeys = (): string[] => {
         try {
             return Object.keys(storageType);
         } catch (error) {

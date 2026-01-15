@@ -88,7 +88,7 @@
 }
 
 .title {
-    @apply text-black font-bold text-3xl;
+    @apply text-gray-800 font-bold text-3xl;
 }
 
 .dark .title {
@@ -96,9 +96,13 @@
 }
 
 .text-login {
-    @apply text-black font-bold;
+    @apply text-gray-800 font-bold;
 }
 
 .dark .text-login {
     @apply text-gray-200;
+}
+
+.mobile-ui-controls {
+    @apply w-9 h-9 flex items-center justify-center cursor-pointer transition-transform duration-300 border border-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600;
 }

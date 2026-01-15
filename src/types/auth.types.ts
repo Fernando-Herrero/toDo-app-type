@@ -1,9 +1,17 @@
-import type { ChangeEvent } from "react";
+import type { ReactNode } from "react";
+
+type FamilyRole = "father" | "mother" | "son" | "daughter" | "pet";
 
 export type User = {
     name: string;
     email: string;
-    avatar: string | null;
+    avatarUrl: string | null;
+    familyRole: FamilyRole | null;
+    isActive: boolean;
+};
+
+export type AuthProviderprops = {
+    children: ReactNode;
 };
 
 export type AuthContextType = {
@@ -13,13 +21,4 @@ export type AuthContextType = {
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
     error: string | null;
     setError: React.Dispatch<React.SetStateAction<string | null>>;
-};
-
-export type InputFieldProps = {
-    label: string;
-    type?: string;
-    name: string;
-    value: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    placeholder: string;
 };

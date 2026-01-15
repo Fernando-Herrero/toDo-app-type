@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 export const DarkTheme = () => {
-    const savedTheme = local.get("theme");
+    const savedTheme = local.get<boolean>("theme");
     const [isDark, setIsDark] = useState<boolean>(savedTheme ?? false);
 
     const onDarkTheme = (): void => {
@@ -29,7 +29,7 @@ export const DarkTheme = () => {
         <>
             <div className="flex md:hidden">
                 <button
-                    className="w-9 h-9 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110"
+                    className="mobile-ui-controls"
                     onClick={onDarkTheme}
                     aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
                 >
