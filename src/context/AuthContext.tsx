@@ -5,7 +5,7 @@ import { createContext, useMemo, useState } from "react";
 export const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: AuthProviderprops) => {
-    const savedUser = local.get<User>("user");
+    const savedUser = local.get<User>("userToDo");
     const [user, setUser] = useState<User>(
         savedUser || { name: "", email: "", avatarUrl: null, familyRole: null, isActive: false }
     );
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }: AuthProviderprops) => {
     const updateUser = (updates: Partial<User>) => {
         const newUser = { ...user, ...updates };
         setUser(newUser);
-        local.save("user", newUser);
+        local.save("userToDo", newUser);
     };
 
     const contextValue: AuthContextType = useMemo(

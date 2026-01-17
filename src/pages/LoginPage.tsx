@@ -7,7 +7,7 @@ import { useTranslate } from "@/translations/useTranslate";
 export const LoginPage = () => {
     const { t } = useTranslate();
     return (
-        <div className="h-screen flex flex-col items-center justify-center gap-6 p-2 bg-main">
+        <div className="h-screen flex flex-col items-center justify-center gap-2 p-2 bg-main">
             <div className="flex items-center gap-2">
                 <DarkTheme />
                 <LanguageSelector />

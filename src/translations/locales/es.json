@@ -33,7 +33,9 @@
             "name_required": "El nombre es obligatorio",
             "name_min": "El nombre debe tener al menos 2 caracteres",
             "email_required": "El email es obligatorio",
-            "email_invalid": "Por favor ingresa un email válido"
+            "email_invalid": "Por favor ingresa un email válido",
+            "role_required": "Por favor selecciona un rol",
+            "avatar_required": "Por favor selecciona un avatar"
         },
         "button": {
             "submit": "Entrar",

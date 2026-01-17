@@ -38,6 +38,17 @@ export const FormField = () => {
             setError(t("form.errors.email_invalid"));
             return;
         }
+
+        if (!user.familyRole) {
+            setError(t("form.errors.role_required"));
+            return;
+        }
+
+        if (!user.avatarUrl) {
+            setError(t("form.errors.avatar_required"));
+            return;
+        }
+
         setIsLoading(true);
         setTimeout(() => {
             user.isActive = true;
@@ -71,11 +82,13 @@ export const FormField = () => {
             />
 
             <label className="flex flex-col gap-1 text-gray-800 dark:text-gray-200">
-                <span className="text-login">{t("form.labels.rol")}</span>
+                <span className="text-login">{t("form.labels.role")}</span>
                 <select
                     name="familyRole"
                     id="familyRole"
                     defaultValue=""
+                    value={user.familyRole ?? ""}
+                    onChange={handleInput}
                     className="border border-gray-600 rounded p-1 [&:has(option[value='']:checked)]:text-gray-600"
                 >
                     <option value="" disabled>

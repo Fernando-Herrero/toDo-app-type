@@ -33,7 +33,9 @@
             "name_required": "Name is required",
             "name_min": "Name must be at least 2 characters",
             "email_required": "Email is required",
-            "email_invalid": "Please enter a valid email"
+            "email_invalid": "Please enter a valid email",
+            "role_required": "Please select a role",
+            "avatar_required": "Plese select an avatar"
         },
         "button": {
             "submit": "Submit",

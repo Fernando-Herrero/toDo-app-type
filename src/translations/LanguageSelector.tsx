@@ -31,16 +31,25 @@ export const LanguageSelector = ({ placement, align }: LanguageSelectorProps) =>
                 <span className="hidden text-gradient md:block">{languagesMap[currentLanguage].label}</span>
             </button>
 
-            <DropDown open={isOpen} onClose={closeMenu} size="sm" placement={placement} align={align}>
+            <DropDown
+                open={isOpen}
+                onClose={closeMenu}
+                size="sm"
+                placement={placement}
+                align={align}
+                className="rounded-xl bg-gray-200 dark:bg-gray-600 p-2"
+            >
                 <div className="flex flex-col">
                     {languages.map((language) => (
                         <button
                             key={language}
                             onClick={() => handleLanguage(language)}
-                            className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-orangeAce/10 rounded-md cursor-pointer"
+                            className="flex items-center gap-1 px-1 py-2 text-sm cursor-pointer rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
                         >
                             <span>{languagesMap?.[language].flag}</span>
-                            <span className="text-gradient">{languagesMap[language]?.label || "Idioma"}</span>
+                            <span className="text-gray-800 dark:text-gray-200">
+                                {languagesMap[language]?.label || "Idioma"}
+                            </span>
                         </button>
                     ))}
                 </div>
